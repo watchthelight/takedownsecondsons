@@ -1,0 +1,363 @@
+# ============================================================================
+# PENTESTING PROJECT .GITIGNORE
+# ============================================================================
+# CRITICAL: This file prevents sensitive data from being committed to git.
+# Review this carefully before adding any new file patterns.
+# ============================================================================
+
+# ============================================================================
+# SENSITIVE DATA - NEVER COMMIT THESE
+# ============================================================================
+
+# Credentials and secrets
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.jks
+*.keystore
+*credentials*
+*secret*
+*password*
+*passwd*
+*.htpasswd
+.env
+.env.*
+!.env.example
+secrets/
+credentials/
+keys/
+certs/
+
+# API keys and tokens
+*api_key*
+*apikey*
+*token*
+*.token
+.api_keys
+api_keys.txt
+tokens.txt
+
+# SSH keys
+id_rsa*
+id_ed25519*
+id_ecdsa*
+id_dsa*
+*.pub
+.ssh/
+
+# Session files
+*.session
+sessions/
+cookies/
+*.cookies
+*.cookie
+
+# ============================================================================
+# SCAN RESULTS AND OUTPUTS - May contain sensitive target data
+# ============================================================================
+
+# Results directories
+results/
+output/
+outputs/
+scans/
+scan_results/
+reports/
+findings/
+
+# Tool-specific output files
+*.xml
+*.json
+!package.json
+!package-lock.json
+!composer.json
+!tsconfig.json
+!*.config.json
+*.html
+!templates/*.html
+*.csv
+*.xlsx
+*.xls
+
+# Nmap outputs
+*.nmap
+*.gnmap
+
+# Nuclei outputs
+nuclei-output/
+*.nuclei
+
+# SQLMap outputs
+.sqlmap/
+sqlmap-output/
+*.dump
+*.sql
+
+# Burp Suite
+*.burp
+burp_*/
+
+# Metasploit
+.msf*/
+loot/
+*.rc
+
+# Nikto
+nikto_output/
+
+# WPScan
+wpscan_output/
+*.wpscan
+
+# ============================================================================
+# LOGS AND CACHE
+# ============================================================================
+
+# Log files
+logs/
+*.log
+*.log.*
+log/
+
+# Cache directories
+.cache/
+cache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.py[cod]
+*$py.class
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+
+# ============================================================================
+# DOWNLOADED CONTENT
+# ============================================================================
+
+# Wordlists (often too large)
+wordlists/
+*.wordlist
+*.dict
+*.txt
+!requirements.txt
+!README.txt
+!LICENSE.txt
+!CHANGELOG.txt
+
+# Downloaded exploits and payloads
+exploits/
+payloads/
+shells/
+webshells/
+*.exe
+*.dll
+*.so
+*.dylib
+*.bin
+*.elf
+*.war
+*.jar
+!build.jar
+
+# Captured data
+captures/
+pcaps/
+*.pcap
+*.pcapng
+*.cap
+
+# Screenshots
+screenshots/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+!assets/*.png
+!assets/*.jpg
+!docs/*.png
+!docs/*.jpg
+
+# ============================================================================
+# VIRTUAL ENVIRONMENTS AND DEPENDENCIES
+# ============================================================================
+
+# Python
+venv/
+.venv/
+env/
+.env/
+ENV/
+virtualenv/
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+.installed.cfg
+
+# Ruby
+.bundle/
+vendor/bundle/
+*.gem
+.ruby-version
+.ruby-gemset
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm/
+.yarn/
+
+# Go
+vendor/
+go.sum
+
+# ============================================================================
+# IDE AND EDITOR FILES
+# ============================================================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains (PyCharm, IntelliJ, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*.swn
+*~
+.netrwhist
+tags
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ============================================================================
+# OPERATING SYSTEM FILES
+# ============================================================================
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+Icon?
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+.directory
+.Trash-*
+
+# ============================================================================
+# PROJECT-SPECIFIC
+# ============================================================================
+
+# Target-specific directories (add your targets here)
+targets/
+target_data/
+recon/
+enumeration/
+
+# Notes that may contain sensitive info
+notes/
+*.notes
+personal_notes/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+*.mdb
+
+# Archives (may contain sensitive data)
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+!assets/*.zip
+
+# Docker
+.docker/
+
+# ============================================================================
+# TOOL CONFIGURATION WITH SECRETS
+# ============================================================================
+
+# Tool configs that may have API keys
+.wpscan/
+.nuclei/
+.subfinder/
+.amass/
+config.yaml
+!config.example.yaml
+config.yml
+!config.example.yml
+*.conf
+!*.example.conf
+
+# ============================================================================
+# KEEP EMPTY DIRECTORIES
+# ============================================================================
+# Add .gitkeep files to empty directories you want to preserve
+!.gitkeep
+!**/.gitkeep

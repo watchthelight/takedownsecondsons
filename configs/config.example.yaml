@@ -1,0 +1,48 @@
+# Example Configuration - Copy to config.yaml and fill in your values
+# NEVER commit config.yaml - it's gitignored for security
+
+project:
+  name: "takedownsecondsons"
+  version: "1.0.0"
+
+# Paths - relative to project root or absolute
+paths:
+  output: "./results"
+  reports: "./reports"
+  logs: "./logs"
+  wordlists: "${WORDLISTS}"  # Uses environment variable
+
+# API Keys - FILL THESE IN config.yaml, NOT HERE
+api_keys:
+  shodan: ""
+  censys_id: ""
+  censys_secret: ""
+  virustotal: ""
+  securitytrails: ""
+  wpscan: ""
+
+# Tool defaults
+tools:
+  nmap:
+    default_flags: "-sV -sC"
+    timing: "T4"
+
+  nuclei:
+    severity: ["critical", "high", "medium"]
+    rate_limit: 150
+
+  ffuf:
+    threads: 40
+    timeout: 10
+
+# Scope - define in-scope targets
+scope:
+  domains: []
+  ip_ranges: []
+  exclude: []
+
+# Reporting
+reporting:
+  format: "markdown"
+  include_evidence: true
+  severity_threshold: "medium"
